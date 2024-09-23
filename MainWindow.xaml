@@ -23,6 +23,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.Resources>
@@ -51,8 +52,8 @@
             </Style>
         </Grid.Resources>
 
-        <TextBox Grid.Row="1" Grid.ColumnSpan="4" Name="TB_Display" FontSize="45" FontFamily="Microsoft Sans Serif" TextAlignment="Right"/>
-        <TextBox Grid.Row="2" Grid.ColumnSpan="4" Name="TB_DisplayResult" FontSize="60" FontFamily="Microsoft Sans Serif" TextAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.ColumnSpan="5" Name="TB_Display" FontSize="45" FontFamily="Microsoft Sans Serif" TextAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.ColumnSpan="5" Name="TB_DisplayResult" FontSize="60" FontFamily="Microsoft Sans Serif" TextAlignment="Right"/>
         <Button Grid.Row="6" Grid.Column="0" Name="BTN_1" Content="1" Click="BTN_1_Click"/>
         <Button Grid.Row="6" Grid.Column="1" Name="BTN_2" Content="2" Click="BTN_2_Click"/>
         <Button Grid.Row="6" Grid.Column="2" Name="BTN_3" Content="3" Click="BTN_3_Click"/>
@@ -69,7 +70,7 @@
         <Button Grid.Row="4" Grid.Column="3" Name="BTN_Sustract" Style="{StaticResource MyStyle}" Content="-" Click="BTN_Sustract_Click"/>
 
         <Button Grid.Row="3" Grid.Column="0" Name="BTN_Clear" Content="AC" Click="BTN_Clear_Click"/>
-        <Button Grid.Row="3" Grid.Column="1" Name="BTN_Delete" Content="DEL" Click="BTN_Delete_Click"/>
+        <Button Grid.Row="3" Grid.Column="1" Name="BTN_Square" Content="x²" Click="BTN_Square_Click"/>
         <Button Grid.Row="3" Grid.Column="2" Name="BTN_Percentage" Content="%" Click="BTN_Percentage_Click"/>
         <Button Grid.Row="3" Grid.Column="3" Name="BTN_Divide" Style="{StaticResource MyStyle}" Content="÷" Click="BTN_Divide_Click"/>
 
@@ -77,6 +78,11 @@
         <Button Grid.Row="7" Grid.Column="1" Name="BTN_0" Content="0" Click="BTN_0_Click"/>
         <Button Grid.Row="7" Grid.Column="2" Name="BTN_Comma" Style="{StaticResource MyStyle}" Content="," Click="BTN_Comma_Click"/>
         <Button Grid.Row="7" Grid.Column="3" Name="BTN_Equal" Style="{StaticResource MyStyle}" Content="=" Click="BTN_Equal_Click"/>
+
+        <Button Grid.Row="8" Grid.Column="0" Name="BTN_Sqrt" Content="√" Click="BTN_Sqrt_Click"/>
+        <Button Grid.Row="8" Grid.Column="1" Name="BTN_Cos" Content="Cos" Click="BTN_Cos_Click"/>
+        <Button Grid.Row="8" Grid.Column="2" Name="BTN_Sin" Content="Sin" Click="BTN_Sin_Click"/>
+        <Button Grid.Row="8" Grid.Column="3" Name="BTN_Tan" Content="Tan" Click="BTN_Tan_Click"/>
 
     </Grid>
 </Window>

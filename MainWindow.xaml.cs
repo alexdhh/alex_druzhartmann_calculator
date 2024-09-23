@@ -23,6 +23,10 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            BTN_Cos.IsEnabled = false;
+            BTN_Sin.IsEnabled = false;
+            BTN_Tan.IsEnabled = false;
+            BTN_Sqrt.IsEnabled = false; 
         }
 
         // définition des variables
@@ -146,7 +150,6 @@ namespace WpfApp1
                 result = nb1 / 100;
                 TB_Display.Text = "";
                 TB_DisplayResult.Text = result.ToString();
-
             }
         }
 
@@ -156,11 +159,25 @@ namespace WpfApp1
             {
                 TB_Display.Text = "0,";
             }
+            else
+            {
+                Display(",");
+            }
         }
 
-        private void BTN_Delete_Click(object sender, RoutedEventArgs e)
+        private void BTN_Square_Click(object sender, RoutedEventArgs e)
         {
-            // à venir
+            if (TB_Display.Text == "")
+            {
+                Display("");
+            }
+            else
+            {
+                nb1 = double.Parse(TB_Display.Text);
+                result = nb1 * nb1;
+                TB_Display.Text = "";
+                TB_DisplayResult.Text = result.ToString();
+            }
         }
 
         private void BTN_Clear_Click(object sender, RoutedEventArgs e)
@@ -175,7 +192,20 @@ namespace WpfApp1
 
         private void BTN_Sci_Click(object sender, RoutedEventArgs e)
         {
-            // à venir
+            if (BTN_Sqrt.IsEnabled == true)
+            {
+                BTN_Sqrt.IsEnabled = false;
+                BTN_Cos.IsEnabled = false;
+                BTN_Sin.IsEnabled = false;
+                BTN_Tan.IsEnabled = false;
+            }
+            else
+            {
+                BTN_Sqrt.IsEnabled = true;
+                BTN_Cos.IsEnabled = true;
+                BTN_Sin.IsEnabled = true;
+                BTN_Tan.IsEnabled = true;
+            }
         }
 
         private void BTN_Equal_Click(object sender, RoutedEventArgs e)
@@ -205,12 +235,71 @@ namespace WpfApp1
                     case '/':
                         result = nb1 / nb2;
                         break;
-
                 }
                 TB_DisplayResult.Text = result.ToString();
 
                 //tesds
 
+            }
+        }
+
+        private void BTN_Sqrt_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_Display.Text == "")
+            {
+                Display("");
+            }
+            else
+            {
+                nb1 = double.Parse(TB_Display.Text);
+                result = Math.Sqrt(nb1);
+                TB_DisplayResult.Text = result.ToString();
+                TB_Display.Text = "";
+            }
+        }
+
+        private void BTN_Cos_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_Display.Text == "")
+            {
+                Display("");
+            }
+            else
+            {
+                nb1 = double.Parse(TB_Display.Text);
+                result = Math.Cos(nb1);
+                TB_DisplayResult.Text = result.ToString();
+                TB_Display.Text = "";
+            }
+        }
+
+        private void BTN_Sin_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_Display.Text == "")
+            {
+                Display("");
+            }
+            else
+            {
+                nb1 = double.Parse(TB_Display.Text);
+                result = Math.Sin(nb1);
+                TB_DisplayResult.Text = result.ToString();
+                TB_Display.Text = "";
+            }
+        }
+
+        private void BTN_Tan_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_Display.Text == "")
+            {
+                Display("");
+            }
+            else
+            {
+                nb1 = double.Parse(TB_Display.Text);
+                result = Math.Tan(nb1);
+                TB_DisplayResult.Text = result.ToString();
+                TB_Display.Text = "";
             }
         }
 
@@ -228,7 +317,7 @@ namespace WpfApp1
             }
             else
             {
-                TB_Display.Text = TB_Display.Text + num;
+                TB_Display.Text += num;
             }
         }
     }
